@@ -10,6 +10,8 @@
 		5E5C5CF8217876AF00566BA5 /* listMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5C5CEE217876AF00566BA5 /* listMaker.framework */; };
 		5E5C5CFD217876AF00566BA5 /* listMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C5CFC217876AF00566BA5 /* listMakerTests.swift */; };
 		5E5C5CFF217876AF00566BA5 /* listMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E5C5CF1217876AF00566BA5 /* listMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E5C5D092178789900566BA5 /* Lister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C5D082178789900566BA5 /* Lister.swift */; };
+		5E5C5D0A217879A800566BA5 /* Lister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5C5D082178789900566BA5 /* Lister.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 		5E5C5CF7217876AF00566BA5 /* listMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = listMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5C5CFC217876AF00566BA5 /* listMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listMakerTests.swift; sourceTree = "<group>"; };
 		5E5C5CFE217876AF00566BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E5C5D082178789900566BA5 /* Lister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lister.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 			children = (
 				5E5C5CF1217876AF00566BA5 /* listMaker.h */,
 				5E5C5CF2217876AF00566BA5 /* Info.plist */,
+				5E5C5D082178789900566BA5 /* Lister.swift */,
 			);
 			path = listMaker;
 			sourceTree = "<group>";
@@ -148,6 +152,7 @@
 				TargetAttributes = {
 					5E5C5CED217876AF00566BA5 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					5E5C5CF6217876AF00566BA5 = {
 						CreatedOnToolsVersion = 10.0;
@@ -194,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5C5D092178789900566BA5 /* Lister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5C5D0A217879A800566BA5 /* Lister.swift in Sources */,
 				5E5C5CFD217876AF00566BA5 /* listMakerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +348,7 @@
 		5E5C5D03217876AF00566BA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -357,6 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.george.listMaker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +374,7 @@
 		5E5C5D04217876AF00566BA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +399,7 @@
 		5E5C5D06217876AF00566BA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = listMakerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -406,6 +417,7 @@
 		5E5C5D07217876AF00566BA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = listMakerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
