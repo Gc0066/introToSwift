@@ -34,7 +34,16 @@ class listMakerTests: XCTestCase {
         self.lister.add(item: "Bread")
         print(self.lister.count)
         XCTAssertEqual(lister.count, 2)
-        XCTAssertEqual(lister.getItem(index: 3), "Invalid index")
+		do {
+			_ = try lister.getItem(index: 2)
+			XCTFail()
+		}
+		catch ListError.outOfRange(let index){
+			print("index \(index) is out of range")
+		}
+		catch {
+			print("an error occurred")
+		}
     }
     
     func testCounter() {
