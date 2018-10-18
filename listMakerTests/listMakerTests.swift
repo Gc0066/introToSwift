@@ -29,6 +29,22 @@ class listMakerTests: XCTestCase {
         XCTAssertEqual(newItem, "Bread")
     }
     
+    func testGetInvalidIndex() {
+        self.lister.add(item: "Bread")
+        self.lister.add(item: "Bread")
+        print(self.lister.count)
+        XCTAssertEqual(lister.count, 2)
+        XCTAssertEqual(lister.getItem(index: 3), "Invalid index")
+    }
+    
+    func testCounter() {
+        var val = self.lister.counter
+        XCTAssertEqual(val, 0)
+        self.lister.counter = 5
+        val = self.lister.counter
+        XCTAssertEqual(val, 5)
+    }
+    
   // func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
