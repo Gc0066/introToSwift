@@ -11,8 +11,6 @@ import XCTest
 
 class listMakerTests: XCTestCase {
     
-    var lister = Lister()
-    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
@@ -24,15 +22,24 @@ class listMakerTests: XCTestCase {
     
     
     func testAddItem() {
-        self.lister.add(item: "Bread")
-        let newItem = lister.getItem(index: 0)
-        XCTAssertEqual(newItem, "Bread")
+        let lister = Lister.sharedInstance
+        lister.add(item: "Bread")
+        do {
+            let newItem = try lister.getItem(index: 0)
+            XCTAssertEqual(newItem, "Bread")
+        }
+        catch {
+            print("an error occurred")
+            XCTFail()
+        }
+        
     }
     
     func testGetInvalidIndex() {
-        self.lister.add(item: "Bread")
-        self.lister.add(item: "Bread")
-        print(self.lister.count)
+        let lister = Lister.sharedInstance
+        lister.add(item: "Bread")
+        lister.add(item: "Bread")
+        print(lister.count)
         XCTAssertEqual(lister.count, 2)
 		do {
 			_ = try lister.getItem(index: 2)
@@ -47,11 +54,22 @@ class listMakerTests: XCTestCase {
     }
     
     func testCounter() {
-        var val = self.lister.counter
+        let lister = Lister.sharedInstance
+        var val = lister.counter
         XCTAssertEqual(val, 0)
-        self.lister.counter = 5
-        val = self.lister.counter
+        lister.counter = 5
+        val = lister.counter
         XCTAssertEqual(val, 5)
+    }
+    
+    func testClear() {
+        let lister = Lister.sharedInstance
+        lister.add(item: "Bread")
+        lister.add(item: "Bread")
+        print(lister.count)
+        XCTAssertEqual(lister.count,2)
+        lister.clearList()
+        XCTAssertEqual(lister.count,0)
     }
     
   // func testExample() {
